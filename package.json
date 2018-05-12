@@ -1,0 +1,25 @@
+{
+  "name": "nuxt-logger",
+  "version": "0.9.0",
+  "description": "logger module for nuxtjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahnuh/nuxt-logger.git"
+  },
+  "keywords": [
+    "nuxtjs"
+  ],
+  "author": "Manuel Heidrich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mahnuh/nuxt-logger/issues"
+  },
+  "homepage": "https://github.com/mahnuh/nuxt-logger#readme",
+  "dependencies": {
+    "vuejs-logger": "1.4.0"
+  }
+}
