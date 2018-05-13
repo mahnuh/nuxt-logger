@@ -4,8 +4,8 @@
   "description": "logger module for nuxtjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+		"release": "np"
+	},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mahnuh/nuxt-logger.git"
