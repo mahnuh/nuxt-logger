@@ -56,4 +56,4 @@ export default {
 ## To do
 
 - [ ] Better support for server side rendering
-- [ ] Better support for Safari and Firefox (method name missing)
+- [x] Better support for Safari and Firefox (method name missing)

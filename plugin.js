@@ -32,7 +32,7 @@ function initializeLogger(options, logLevels) {
 		if (logLevels.indexOf(logLevel) >= logLevels.indexOf(options.logLevel) && options.isEnabled) {
 			return logger[logLevel] = (...args) => {
 				const methodName = getMethodName()
-				output(logLevel, methodName, args);
+				output(logLevel, methodName, args)
 			}
 		}
 		
@@ -43,28 +43,39 @@ function initializeLogger(options, logLevels) {
 }
 
 function output(logLevel, methodName, args) {
-	console.log('%c' + outputConfig[logLevel].name + '%c' + methodName + '()', 'background: ' + outputConfig[logLevel].color + ';padding: 2px 8px; border-radius: 6px 0 0 6px; color: #fff', 'background: #E5E5E5; padding: 2px 8px; border-radius: 0 6px 6px 0;');
+	console.log('%c' + outputConfig[logLevel].name + '%c' + methodName + '()', 'background: ' + outputConfig[logLevel].color + ';padding: 2px 8px; border-radius: 6px 0 0 6px; color: #fff', 'background: #E5E5E5; padding: 2px 8px; border-radius: 0 6px 6px 0;')
 	
 	args.forEach((arg) => {
-		console.log('%c>>', 'color: ' + outputConfig[logLevel].color + '; margin-left:5px;', arg);
-	});
+		console.log('%c>>', 'color: ' + outputConfig[logLevel].color + '; margin-left:5px;', arg)
+	})
 }
 
 function getMethodName() {
 	let error = {}
+
 	try { throw new Error('') } catch (e) { error = e }
-	// IE9 does not have .stack property
+
+	// return if browser does not have .stack property
 	if (error.stack === undefined) {
 			return ''
 	}
-	let stackTrace = error.stack.split('\n')[3]
-	if (/ /.test(stackTrace)) {
-		stackTrace = stackTrace.trim().split(' ')[1]
+
+	let methodName = error.stack.split('\n')[3]
+
+	if (/@/.test(methodName)) {
+		methodName = error.stack.split('\n')[2]
+		methodName = methodName.trim().split('@')[0]
 	}
-	if (stackTrace && stackTrace.includes('.')) {
-		stackTrace = stackTrace.split('.')[1]
+
+	if (/ /.test(methodName)) {
+		methodName = methodName.trim().split(' ')[1]
 	}
-	return stackTrace
+
+	if (methodName && methodName.includes('.')) {
+		methodName = methodName.split('.')[1]
+	}
+
+	return methodName
 }
 
 const loggerPlugin = {
