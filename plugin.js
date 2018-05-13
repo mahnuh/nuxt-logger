@@ -2,7 +2,7 @@ import Vue from 'vue'
 
 const defaultOptions = {
 	isEnabled: true,
-	logLevel: 'warn',
+	logLevel: 'debug',
 }
 
 const outputConfig = {
