@@ -48,3 +48,8 @@ export default {
 <p algin="center">
 	<img src="https://www.dropbox.com/s/drb2u6pxbptn326/screenshot.png?dl=1">
 </p>
+
+## To do
+
+- [ ] Better support for server side rendering
+- [ ] Better support for Safari and Firefox (method name missing)
