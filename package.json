@@ -4,8 +4,8 @@
   "description": "logger module for nuxtjs",
   "main": "index.js",
   "scripts": {
-		"release": "np"
-	},
+    "release": "np"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mahnuh/nuxt-logger.git"
