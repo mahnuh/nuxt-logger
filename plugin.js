@@ -68,7 +68,7 @@ function getMethodName() {
 }
 
 const loggerPlugin = {
-  install (foo, options) {
+  install (v, options) {
     if (Vue.__nuxt_logger_installed__) {
       return
     }
